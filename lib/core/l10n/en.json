@@ -1,0 +1,23 @@
+{
+  "appTitle": "Alexander P - Flutter Developer Portfolio",
+  "navHome": "Home",
+  "navServices": "Services",
+  "navProjects": "Projects",
+  "navContact": "Contact",
+
+  "heroGreeting": "Hi, I am developer",
+  "heroTitle": "Mobile | Web",
+  "heroSubtitle": "Specialist flutter developer",
+  "btnViewProfile": "View Profile",
+  "btnKnowMore": "Know more",
+
+  "servicesTitle": "Services",
+  "serviceDevelopmentTitle": "Development",
+  "serviceDevelopmentDesc": "Application development from scratch to deployment",
+  "serviceUIUXTitle": "Custom UI/UX",
+  "serviceUIUXDesc": "Design your application to your minimalist request or however you want it",
+  "serviceMaintenanceTitle": "Maintenance",
+  "serviceMaintenanceDesc": "Continuous updates, bug fixing, and performance monitoring to keep your app running smoothly",
+
+  "loadingPortfolio": "Loading portfolio..."
+}

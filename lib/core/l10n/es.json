@@ -1,0 +1,23 @@
+{
+  "appTitle": "Alexander P - Portafolio Desarrollador Flutter",
+  "navHome": "Inicio",
+  "navServices": "Servicios",
+  "navProjects": "Proyectos",
+  "navContact": "Contacto",
+  
+  "heroGreeting": "Hola, soy desarrollador",
+  "heroTitle": "Móvil | Web",
+  "heroSubtitle": "Desarrollador especialista en Flutter",
+  "btnViewProfile": "Ver Perfil",
+  "btnKnowMore": "Saber más",
+  
+  "servicesTitle": "Servicios",
+  "serviceDevelopmentTitle": "Desarrollo",
+  "serviceDevelopmentDesc": "Desarrollo de aplicaciones desde cero hasta el despliegue",
+  "serviceUIUXTitle": "UI/UX Personalizado",
+  "serviceUIUXDesc": "Diseño de tu aplicación según tu solicitud minimalista o como la desees",
+  "serviceMaintenanceTitle": "Mantenimiento",
+  "serviceMaintenanceDesc": "Actualizaciones continuas, corrección de errores y monitoreo de rendimiento para mantener tu app funcionando sin problemas",
+  
+  "loadingPortfolio": "Cargando portafolio..."
+}

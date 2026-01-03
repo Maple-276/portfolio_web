@@ -1,5 +1,11 @@
 ﻿import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/widgets/section_container.dart';
+import '../../../../core/widgets/fade_in_animation.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/utils/responsive_utils.dart';
+import '../widgets/service_card.dart';
 
 class ServiceScreen extends StatelessWidget {
   const ServiceScreen({super.key});
@@ -7,48 +13,71 @@ class ServiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SectionContainer(
-      child: Column(
-        children: [
-          Text(
-            'Mis Servicios',
-            style: Theme.of(context).textTheme.displaySmall,
-          ),
-          const SizedBox(height: 40),
-          Wrap(
-            spacing: 20,
-            runSpacing: 20,
-            alignment: WrapAlignment.center,
-            children: [
-              _buildServiceCard('Desarrollo Móvil', Icons.phone_android),
-              _buildServiceCard('Desarrollo Web', Icons.web),
-              _buildServiceCard('Diseño UI/UX', Icons.brush),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildServiceCard(String title, IconData icon) {
-    return Container(
-      width: 250,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10),
-        ],
-      ),
-      child: Column(
-        children: [
-          Icon(icon, size: 50, color: Colors.blue),
-          const SizedBox(height: 15),
-          Text(
-            title,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ],
+      backgroundColor: AppColors.serviceBackground,
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 80,
+        ), // Espacio para la imagen superpuesta
+        child: Column(
+          children: [
+            FadeInAnimation(
+              delay: const Duration(milliseconds: 200),
+              child: Text(
+                'Services',
+                style: GoogleFonts.playfairDisplay(
+                  color: Colors.grey.shade400,
+                  fontWeight: FontWeight.w400,
+                  fontSize: ResponsiveUtils.fontSize(
+                    context,
+                    AppTextSizes.servicesTitle,
+                  ),
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+            SizedBox(height: ResponsiveUtils.spacing(context, AppSpacing.xxl)),
+            Wrap(
+              spacing: ResponsiveUtils.spacing(
+                context,
+                AppSpacing.serviceCardSpacing,
+              ),
+              runSpacing: ResponsiveUtils.spacing(
+                context,
+                AppSpacing.serviceCardSpacing,
+              ),
+              alignment: WrapAlignment.center,
+              children: [
+                FadeInAnimation(
+                  delay: const Duration(milliseconds: 400),
+                  child: const ServiceCard(
+                    icon: Icons.code,
+                    title: 'Development',
+                    description:
+                        'Application development from scratch to deployment',
+                  ),
+                ),
+                FadeInAnimation(
+                  delay: const Duration(milliseconds: 600),
+                  child: const ServiceCard(
+                    icon: Icons.brush,
+                    title: 'Custome UI/UX',
+                    description:
+                        'Design your application to your minimalist request or however you want it',
+                  ),
+                ),
+                FadeInAnimation(
+                  delay: const Duration(milliseconds: 800),
+                  child: const ServiceCard(
+                    icon: Icons.settings,
+                    title: 'Maintance',
+                    description:
+                        'Continuous updates, bug fixing, and performance monitoring to keep your app running smoothly',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,11 +1,56 @@
 ﻿import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AppColors {
+  // Paleta EXACTA extraída del diseño original
+  static const Color primaryTeal = Color(
+    0xFF17DBA7,
+  ); // Top Bar (usuario especificó #17DBA7)
+  static const Color darkBackground = Color(
+    0xFF040404,
+  ); // Hero section y fondo (usuario especificó #040404)
+  static const Color serviceBackground = Color(
+    0xFF10342A,
+  ); // Service section (usuario especificó #10342A)
+  static const Color cardTeal = Color(
+    0xFF17DBA7,
+  ); // Cards en Service (mismo verde del navbar)
+  static const Color textWhite = Colors.white;
+}
 
 final ThemeData appTheme = ThemeData(
   useMaterial3: true,
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-  textTheme: const TextTheme(
-    displayMedium: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
-    displaySmall: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-    headlineSmall: TextStyle(fontSize: 24, fontStyle: FontStyle.italic),
+  brightness: Brightness.dark, // El diseño es predominantemente oscuro
+  scaffoldBackgroundColor: AppColors.darkBackground,
+
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColors.primaryTeal,
+    primary: AppColors.primaryTeal,
+    secondary: AppColors.cardTeal,
+    surface: AppColors.darkBackground,
+    brightness: Brightness.dark,
+  ),
+
+  // Definimos estilos de texto globales para reutilizar
+  textTheme: TextTheme(
+    displayMedium: GoogleFonts.playfairDisplay(
+      // Serif moderno y elegante para titulos grandes
+      fontSize: 48,
+      fontWeight: FontWeight.bold,
+      color: AppColors.textWhite,
+    ),
+    displaySmall: GoogleFonts.merriweather(
+      // Otro serif legible
+      fontSize: 36,
+      fontWeight: FontWeight.bold,
+      color: AppColors.textWhite,
+    ),
+    headlineSmall: GoogleFonts.lato(
+      // Sans serif limpio para subtitulos
+      fontSize: 24,
+      color: AppColors.textWhite,
+    ),
+    titleMedium: GoogleFonts.lato(color: AppColors.textWhite),
+    bodyMedium: GoogleFonts.lato(color: AppColors.textWhite),
   ),
 );

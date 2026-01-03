@@ -31,6 +31,24 @@ final ThemeData appTheme = ThemeData(
     brightness: Brightness.dark,
   ),
 
+  // 1. Color de Selección de Texto (UX Premium)
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: AppColors.primaryTeal,
+    selectionColor: AppColors.primaryTeal.withValues(alpha: 0.4),
+    selectionHandleColor: AppColors.primaryTeal,
+  ),
+
+  // 2. Scrollbar Personalizado
+  scrollbarTheme: ScrollbarThemeData(
+    thumbColor: WidgetStateProperty.all(
+      AppColors.primaryTeal.withValues(alpha: 0.5),
+    ),
+    trackColor: WidgetStateProperty.all(Colors.white.withValues(alpha: 0.05)),
+    radius: const Radius.circular(10),
+    thickness: WidgetStateProperty.all(6),
+    interactive: true,
+  ),
+
   // Definimos estilos de texto globales para reutilizar
   textTheme: TextTheme(
     displayMedium: GoogleFonts.playfairDisplay(

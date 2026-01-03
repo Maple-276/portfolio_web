@@ -32,32 +32,32 @@ class AppLocalizations {
   }
 
   // Get translated string by key
-  String translate(String key) {
+  String getString(String key) {
     return _localizedStrings[key] ?? key;
   }
 
   // Convenience getters for common translations
-  String get appTitle => translate('appTitle');
-  String get navHome => translate('navHome');
-  String get navServices => translate('navServices');
-  String get navProjects => translate('navProjects');
-  String get navContact => translate('navContact');
+  String get appTitle => getString('appTitle');
+  String get navHome => getString('navHome');
+  String get navServices => getString('navServices');
+  String get navProjects => getString('navProjects');
+  String get navContact => getString('navContact');
 
-  String get heroGreeting => translate('heroGreeting');
-  String get heroTitle => translate('heroTitle');
-  String get heroSubtitle => translate('heroSubtitle');
-  String get btnViewProfile => translate('btnViewProfile');
-  String get btnKnowMore => translate('btnKnowMore');
+  String get heroGreeting => getString('heroGreeting');
+  String get heroTitle => getString('heroTitle');
+  String get heroSubtitle => getString('heroSubtitle');
+  String get btnViewProfile => getString('btnViewProfile');
+  String get btnKnowMore => getString('btnKnowMore');
 
-  String get servicesTitle => translate('servicesTitle');
-  String get serviceDevelopmentTitle => translate('serviceDevelopmentTitle');
-  String get serviceDevelopmentDesc => translate('serviceDevelopmentDesc');
-  String get serviceUIUXTitle => translate('serviceUIUXTitle');
-  String get serviceUIUXDesc => translate('serviceUIUXDesc');
-  String get serviceMaintenanceTitle => translate('serviceMaintenanceTitle');
-  String get serviceMaintenanceDesc => translate('serviceMaintenanceDesc');
+  String get servicesTitle => getString('servicesTitle');
+  String get serviceDevelopmentTitle => getString('serviceDevelopmentTitle');
+  String get serviceDevelopmentDesc => getString('serviceDevelopmentDesc');
+  String get serviceUIUXTitle => getString('serviceUIUXTitle');
+  String get serviceUIUXDesc => getString('serviceUIUXDesc');
+  String get serviceMaintenanceTitle => getString('serviceMaintenanceTitle');
+  String get serviceMaintenanceDesc => getString('serviceMaintenanceDesc');
 
-  String get loadingPortfolio => translate('loadingPortfolio');
+  String get loadingPortfolio => getString('loadingPortfolio');
 }
 
 class _AppLocalizationsDelegate

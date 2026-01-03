@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 
-class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+class NavBar extends StatelessWidget {
+  final Function(int sectionIndex) onScrollToSection;
+  final bool isScrolled;
 
-  @override
-  State<NavBar> createState() => _NavBarState();
-}
-
-class _NavBarState extends State<NavBar> {
-  bool _isScrolled = false;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  const NavBar({
+    super.key,
+    required this.onScrollToSection,
+    required this.isScrolled,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,28 +22,28 @@ class _NavBarState extends State<NavBar> {
       height: 70,
       decoration: BoxDecoration(
         // Color verde que se hace más sólido al hacer scroll
-        color: _isScrolled
+        color: isScrolled
             ? AppColors.primaryTeal
-            : AppColors.primaryTeal.withOpacity(0.95),
+            : AppColors.primaryTeal.withValues(alpha: 0.95),
         border: Border(
           bottom: BorderSide(
-            color: _isScrolled
-                ? Colors.black.withOpacity(0.1)
-                : Colors.white.withOpacity(0.1),
+            color: isScrolled
+                ? Colors.black.withValues(alpha: 0.1)
+                : Colors.white.withValues(alpha: 0.1),
             width: 1,
           ),
         ),
-        boxShadow: _isScrolled
+        boxShadow: isScrolled
             ? [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.15),
+                  color: Colors.black.withValues(alpha: 0.15),
                   blurRadius: 15,
                   offset: const Offset(0, 5),
                 ),
               ]
             : [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -82,7 +77,7 @@ class _NavBarState extends State<NavBar> {
                       Shadow(
                         offset: const Offset(0, 1),
                         blurRadius: 2,
-                        color: Colors.white.withOpacity(0.3),
+                        color: Colors.white.withValues(alpha: 0.3),
                       ),
                     ],
                   ),
@@ -94,11 +89,20 @@ class _NavBarState extends State<NavBar> {
             if (isDesktop)
               Row(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
-                  _NavBarItem(title: 'Home'),
-                  _NavBarItem(title: 'Services'),
-                  _NavBarItem(title: 'Projects'),
-                  _NavBarItem(title: 'Contact'),
+                children: [
+                  _NavBarItem(title: 'Home', onTap: () => onScrollToSection(0)),
+                  _NavBarItem(
+                    title: 'Services',
+                    onTap: () => onScrollToSection(1),
+                  ),
+                  _NavBarItem(
+                    title: 'Projects',
+                    onTap: () => onScrollToSection(2),
+                  ),
+                  _NavBarItem(
+                    title: 'Contact',
+                    onTap: () => onScrollToSection(3),
+                  ),
                 ],
               )
             else
@@ -111,7 +115,7 @@ class _NavBarState extends State<NavBar> {
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
                 onPressed: () {
-                  // TODO: Implementar Drawer
+                  Scaffold.of(context).openEndDrawer();
                 },
               ),
           ],
@@ -124,7 +128,9 @@ class _NavBarState extends State<NavBar> {
 /// Widget privado para cada item de navegación
 class _NavBarItem extends StatefulWidget {
   final String title;
-  const _NavBarItem({required this.title});
+  final VoidCallback onTap;
+
+  const _NavBarItem({required this.title, required this.onTap});
 
   @override
   State<_NavBarItem> createState() => _NavBarItemState();
@@ -141,9 +147,7 @@ class _NavBarItemState extends State<_NavBarItem> {
       child: Padding(
         padding: const EdgeInsets.only(left: 35),
         child: TextButton(
-          onPressed: () {
-            // TODO: Implementar scroll
-          },
+          onPressed: widget.onTap,
           style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
             minimumSize: Size.zero,

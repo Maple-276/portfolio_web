@@ -1,1 +1,5 @@
-﻿abstract class ContactRepository { /* Define metodos abstractos */ }
+﻿import '../models/contact_info_model.dart';
+
+abstract class ContactRepository {
+  ContactInfoModel getContactInfo();
+}

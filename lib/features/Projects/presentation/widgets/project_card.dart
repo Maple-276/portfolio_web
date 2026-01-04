@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../domain/models/project_model.dart';
+import 'project_buttons.dart';
+import 'project_image.dart';
+import 'project_tags.dart';
+
+import '../../../../core/l10n/app_localizations.dart';
 
 class ProjectCard extends StatefulWidget {
   final ProjectModel project;
@@ -14,13 +18,6 @@ class ProjectCard extends StatefulWidget {
 
 class _ProjectCardState extends State<ProjectCard> {
   bool _isHovered = false;
-
-  Future<void> _launchUrl(String url) async {
-    final uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
-      throw Exception('Could not launch $url');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,31 +55,8 @@ class _ProjectCardState extends State<ProjectCard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Imagen del Proyecto (Placeholder gradient por ahora si no hay asset real)
-              Container(
-                height: 180,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.black87, AppColors.serviceBackground],
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.topRight,
-                  ),
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.code_rounded,
-                    size: 60,
-                    color: Colors.white.withValues(alpha: 0.2),
-                  ),
-                ),
-                // Placeholder: Descomentar para usar imagen real cuando esté disponible
-                // child: Image.asset(
-                //   widget.project.imageUrl,
-                //   fit: BoxFit.cover,
-                //   errorBuilder: (context, error, stackTrace) => ...,
-                // ),
-              ),
+              // 1. Imagen del Proyecto
+              ProjectImage(imageUrl: widget.project.imageUrl),
 
               // 2. Contenido
               Padding(
@@ -91,7 +65,9 @@ class _ProjectCardState extends State<ProjectCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.project.title,
+                      AppLocalizations.of(
+                        context,
+                      ).getString(widget.project.title),
                       style: Theme.of(context).textTheme.headlineSmall
                           ?.copyWith(
                             fontSize: 22,
@@ -101,7 +77,9 @@ class _ProjectCardState extends State<ProjectCard> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      widget.project.description,
+                      AppLocalizations.of(
+                        context,
+                      ).getString(widget.project.description),
                       style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 14,
@@ -113,84 +91,14 @@ class _ProjectCardState extends State<ProjectCard> {
                     const SizedBox(height: 20),
 
                     // 3. Tags
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: widget.project.tags.map((tag) {
-                        return Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 5,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryTeal.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: AppColors.primaryTeal.withValues(
-                                alpha: 0.3,
-                              ),
-                              width: 1,
-                            ),
-                          ),
-                          child: Text(
-                            tag,
-                            style: const TextStyle(
-                              color: AppColors.primaryTeal,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                    ProjectTags(tags: widget.project.tags),
 
                     const SizedBox(height: 25),
 
                     // 4. Botones
-                    Row(
-                      children: [
-                        if (widget.project.projectUrl != null)
-                          Expanded(
-                            child: ElevatedButton.icon(
-                              onPressed: () =>
-                                  _launchUrl(widget.project.projectUrl!),
-                              icon: const Icon(Icons.language, size: 18),
-                              label: const Text('Live Demo'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.primaryTeal,
-                                foregroundColor: Colors.black,
-                                textStyle: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 12,
-                                ),
-                              ),
-                            ),
-                          ),
-                        if (widget.project.projectUrl != null &&
-                            widget.project.githubUrl != null)
-                          const SizedBox(width: 10),
-
-                        if (widget.project.githubUrl != null)
-                          Expanded(
-                            child: OutlinedButton.icon(
-                              onPressed: () =>
-                                  _launchUrl(widget.project.githubUrl!),
-                              icon: const Icon(Icons.code, size: 18),
-                              label: const Text('View Code'),
-                              style: OutlinedButton.styleFrom(
-                                side: const BorderSide(
-                                  color: AppColors.primaryTeal,
-                                ),
-                                foregroundColor: AppColors.primaryTeal,
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 12,
-                                ),
-                              ),
-                            ),
-                          ),
-                      ],
+                    ProjectButtons(
+                      projectUrl: widget.project.projectUrl,
+                      githubUrl: widget.project.githubUrl,
                     ),
                   ],
                 ),

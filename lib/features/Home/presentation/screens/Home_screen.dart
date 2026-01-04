@@ -4,7 +4,10 @@ import '../../../../core/widgets/fade_in_animation.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/widgets/custom_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/utils/responsive_utils.dart';
+import '../../../Contact/data/repositories/contact_repository_impl.dart';
+import '../../../../core/l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Hi, I am developer',
+                      AppLocalizations.of(context).getString('heroGreeting'),
                       style: Theme.of(context).textTheme.headlineSmall
                           ?.copyWith(
                             color: Colors.white,
@@ -54,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                       height: ResponsiveUtils.spacing(context, AppSpacing.xs),
                     ),
                     Text(
-                      'Mobile | Web',
+                      AppLocalizations.of(context).getString('heroTitle'),
                       style: Theme.of(context).textTheme.displayMedium
                           ?.copyWith(
                             color: Colors.white,
@@ -71,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                       height: ResponsiveUtils.spacing(context, AppSpacing.sm),
                     ),
                     Text(
-                      'Specialist flutter developer',
+                      AppLocalizations.of(context).getString('heroSubtitle'),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.grey.shade400,
                         fontWeight: FontWeight.w400,
@@ -88,14 +91,32 @@ class HomeScreen extends StatelessWidget {
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        PrimaryButton(text: 'View Profile', onPressed: () {}),
+                        PrimaryButton(
+                          text: AppLocalizations.of(
+                            context,
+                          ).getString('btnViewProfile'),
+                          onPressed: () async {
+                            final url = ContactRepositoryImpl()
+                                .getContactInfo()
+                                .linkedinUrl;
+                            final uri = Uri.parse(url);
+                            if (!await launchUrl(uri)) {
+                              throw Exception('Could not launch \$url');
+                            }
+                          },
+                        ),
                         SizedBox(
                           width: ResponsiveUtils.spacing(
                             context,
                             AppSpacing.sm,
                           ),
                         ),
-                        SecondaryButton(text: 'Know more', onPressed: () {}),
+                        SecondaryButton(
+                          text: AppLocalizations.of(
+                            context,
+                          ).getString('btnKnowMore'),
+                          onPressed: () {},
+                        ),
                       ],
                     ),
                   ],

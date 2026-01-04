@@ -3,6 +3,7 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/widgets/section_container.dart';
 import '../../data/repositories/projects_repository_impl.dart';
 import '../widgets/project_card.dart';
+import '../../../../core/l10n/app_localizations.dart';
 
 class ProjectsScreen extends StatelessWidget {
   const ProjectsScreen({super.key});
@@ -21,7 +22,7 @@ class ProjectsScreen extends StatelessWidget {
         children: [
           // Header Section
           Text(
-            'Featured Projects',
+            AppLocalizations.of(context).getString('projectsTitle'),
             style: Theme.of(context).textTheme.displayMedium?.copyWith(
               fontSize: 40,
               color: AppColors.primaryTeal,
@@ -30,7 +31,7 @@ class ProjectsScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'A selection of my recent work',
+            AppLocalizations.of(context).getString('projectsSubtitle'),
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               color: Colors.white70,
               fontSize: 18,
@@ -76,9 +77,9 @@ class ProjectsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
-            child: const Text(
-              'View More on GitHub',
-              style: TextStyle(
+            child: Text(
+              AppLocalizations.of(context).getString('viewMoreGithub'),
+              style: const TextStyle(
                 color: AppColors.primaryTeal,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,

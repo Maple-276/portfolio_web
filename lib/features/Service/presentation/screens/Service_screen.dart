@@ -6,6 +6,7 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/responsive_utils.dart';
 import '../widgets/service_card.dart';
+import '../../../../core/l10n/app_localizations.dart';
 
 class ServiceScreen extends StatelessWidget {
   const ServiceScreen({super.key});
@@ -23,7 +24,7 @@ class ServiceScreen extends StatelessWidget {
             FadeInAnimation(
               delay: const Duration(milliseconds: 200),
               child: Text(
-                'Services',
+                AppLocalizations.of(context).getString('servicesTitle'),
                 style: GoogleFonts.playfairDisplay(
                   color: Colors.grey.shade400,
                   fontWeight: FontWeight.w400,
@@ -49,29 +50,38 @@ class ServiceScreen extends StatelessWidget {
               children: [
                 FadeInAnimation(
                   delay: const Duration(milliseconds: 400),
-                  child: const ServiceCard(
+                  child: ServiceCard(
                     icon: Icons.code,
-                    title: 'Development',
-                    description:
-                        'Application development from scratch to deployment',
+                    title: AppLocalizations.of(
+                      context,
+                    ).getString('serviceDevelopmentTitle'),
+                    description: AppLocalizations.of(
+                      context,
+                    ).getString('serviceDevelopmentDesc'),
                   ),
                 ),
                 FadeInAnimation(
                   delay: const Duration(milliseconds: 600),
-                  child: const ServiceCard(
+                  child: ServiceCard(
                     icon: Icons.brush,
-                    title: 'Custome UI/UX',
-                    description:
-                        'Design your application to your minimalist request or however you want it',
+                    title: AppLocalizations.of(
+                      context,
+                    ).getString('serviceUIUXTitle'),
+                    description: AppLocalizations.of(
+                      context,
+                    ).getString('serviceUIUXDesc'),
                   ),
                 ),
                 FadeInAnimation(
                   delay: const Duration(milliseconds: 800),
-                  child: const ServiceCard(
+                  child: ServiceCard(
                     icon: Icons.settings,
-                    title: 'Maintance',
-                    description:
-                        'Continuous updates, bug fixing, and performance monitoring to keep your app running smoothly',
+                    title: AppLocalizations.of(
+                      context,
+                    ).getString('serviceMaintenanceTitle'),
+                    description: AppLocalizations.of(
+                      context,
+                    ).getString('serviceMaintenanceDesc'),
                   ),
                 ),
               ],

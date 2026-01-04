@@ -58,6 +58,13 @@ class AppLocalizations {
   String get serviceMaintenanceDesc => getString('serviceMaintenanceDesc');
 
   String get loadingPortfolio => getString('loadingPortfolio');
+
+  // Contact Form Feedback
+  String get msgSentSuccess => getString('msgSentSuccess');
+  String get msgSentError => getString('msgSentError');
+  String get validationName => getString('validationName');
+  String get validationEmail => getString('validationEmail');
+  String get validationMessage => getString('validationMessage');
 }
 
 class _AppLocalizationsDelegate

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import 'language_switcher.dart';
+import '../l10n/app_localizations.dart';
 
 class NavBar extends StatelessWidget {
   final Function(int sectionIndex) onScrollToSection;
@@ -90,33 +92,48 @@ class NavBar extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  _NavBarItem(title: 'Home', onTap: () => onScrollToSection(0)),
                   _NavBarItem(
-                    title: 'Services',
+                    title: AppLocalizations.of(context).getString('navHome'),
+                    onTap: () => onScrollToSection(0),
+                  ),
+                  _NavBarItem(
+                    title: AppLocalizations.of(
+                      context,
+                    ).getString('navServices'),
                     onTap: () => onScrollToSection(1),
                   ),
                   _NavBarItem(
-                    title: 'Projects',
+                    title: AppLocalizations.of(
+                      context,
+                    ).getString('navProjects'),
                     onTap: () => onScrollToSection(2),
                   ),
                   _NavBarItem(
-                    title: 'Contact',
+                    title: AppLocalizations.of(context).getString('navContact'),
                     onTap: () => onScrollToSection(3),
                   ),
+                  const SizedBox(width: 20),
+                  const LanguageSwitcher(),
                 ],
               )
             else
-              IconButton(
-                icon: const Icon(
-                  Icons.menu_rounded,
-                  color: Colors.black,
-                  size: 28,
-                ),
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                onPressed: () {
-                  Scaffold.of(context).openEndDrawer();
-                },
+              Row(
+                children: [
+                  const LanguageSwitcher(),
+                  const SizedBox(width: 10),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.menu_rounded,
+                      color: Colors.black,
+                      size: 28,
+                    ),
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(),
+                    onPressed: () {
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                  ),
+                ],
               ),
           ],
         ),

@@ -19,5 +19,35 @@
   "serviceMaintenanceTitle": "Mantenimiento",
   "serviceMaintenanceDesc": "Actualizaciones continuas, corrección de errores y monitoreo de rendimiento para mantener tu app funcionando sin problemas",
   
-  "loadingPortfolio": "Cargando portafolio..."
+  "loadingPortfolio": "Cargando portafolio...",
+  
+  "contactTitle": "Contáctame",
+  "contactSubtitle": "¿Tienes un proyecto en mente? Hablemos.",
+  "contactEmail": "Correo",
+  "contactLocation": "Ubicación",
+  "contactFollowMe": "Sígueme",
+  "contactSendMsgTitle": "Enviar Mensaje",
+  "contactBtnSend": "Enviar Mensaje",
+  "labelName": "Nombre",
+  "labelEmail": "Correo",
+  "labelMessage": "Mensaje",
+
+  "projectsTitle": "Proyectos Destacados",
+  "projectsSubtitle": "Una selección de mi trabajo reciente",
+  "viewMoreGithub": "Ver Más en GitHub",
+  
+  "projTitle1": "Portafolio Web",
+  "projDesc1": "Mi portafolio personal construido con Flutter Web. Diseño responsivo, animaciones personalizadas y soporte multi-idioma.",
+  "projTitle2": "App E-Commerce",
+  "projDesc2": "Aplicación móvil de comercio electrónico con pasarela de pagos, gestión de carrito y panel de administración.",
+  "projTitle3": "API Gestor de Tareas",
+  "projDesc3": "Backend RESTful para gestión de tareas y usuarios, construido con Node.js y MongoDB. Autenticación JWT.",
+  "projTitle4": "Dashboard del Clima",
+  "projDesc4": "Dashboard de clima en tiempo real consumiendo OpenWeatherMap API. Gráficos interactivos y geolocalización.",
+
+  "msgSentSuccess": "¡Mensaje Enviado Exitosamente!",
+  "msgSentError": "Error al enviar mensaje. Intenta de nuevo.",
+  "validationName": "Por favor ingresa tu nombre",
+  "validationEmail": "Por favor ingresa un correo válido",
+  "validationMessage": "Por favor ingresa un mensaje"
 }

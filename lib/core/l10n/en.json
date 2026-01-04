@@ -19,5 +19,35 @@
   "serviceMaintenanceTitle": "Maintenance",
   "serviceMaintenanceDesc": "Continuous updates, bug fixing, and performance monitoring to keep your app running smoothly",
 
-  "loadingPortfolio": "Loading portfolio..."
+  "loadingPortfolio": "Loading portfolio...",
+  
+  "contactTitle": "Get In Touch",
+  "contactSubtitle": "Have a project in mind? Let's talk.",
+  "contactEmail": "Email",
+  "contactLocation": "Location",
+  "contactFollowMe": "Follow Me",
+  "contactSendMsgTitle": "Send a Message",
+  "contactBtnSend": "Send Message",
+  "labelName": "Name",
+  "labelEmail": "Email",
+  "labelMessage": "Message",
+
+  "projectsTitle": "Featured Projects",
+  "projectsSubtitle": "A selection of my recent work",
+  "viewMoreGithub": "View More on GitHub",
+  
+  "projTitle1": "Portfolio Web",
+  "projDesc1": "My personal portfolio built with Flutter Web. Responsive design, custom animations, and multi-language support.",
+  "projTitle2": "E-Commerce App",
+  "projDesc2": "E-commerce mobile app with payment gateway, cart management, and admin panel.",
+  "projTitle3": "Task Manager API",
+  "projDesc3": "RESTful backend for task and user management, built with Node.js and MongoDB. JWT Authentication.",
+  "projTitle4": "Weather Dashboard",
+  "projDesc4": "Real-time weather dashboard consuming OpenWeatherMap API. Interactive charts and geolocation.",
+
+  "msgSentSuccess": "Message Sent Successfully!",
+  "msgSentError": "Failed to send message. Please try again.",
+  "validationName": "Please enter your name",
+  "validationEmail": "Please enter a valid email",
+  "validationMessage": "Please enter a message"
 }

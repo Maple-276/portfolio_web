@@ -8,8 +8,26 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(newLocale);
+  }
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale? _locale;
+
+  void setLocale(Locale newLocale) {
+    setState(() {
+      _locale = newLocale;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +35,7 @@ class MyApp extends StatelessWidget {
       title: 'Alexander P - Portfolio',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
+      locale: _locale,
 
       // Configuración de idiomas
       localizationsDelegates: const [
@@ -29,20 +48,19 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // Inglés
         Locale('es', ''), // Español
       ],
-      // Detección automática del idioma del navegador
+      // Detección automática del idioma del navegador (solo si _locale es null)
       localeResolutionCallback: (locale, supportedLocales) {
+        if (_locale != null) return _locale;
+
         if (locale == null) {
           return supportedLocales.first;
         }
 
-        // Comprobar si el idioma del dispositivo está soportado
         for (var supportedLocale in supportedLocales) {
           if (supportedLocale.languageCode == locale.languageCode) {
             return supportedLocale;
           }
         }
-
-        // Si no está soportado, devolver inglés por defecto
         return supportedLocales.first;
       },
 

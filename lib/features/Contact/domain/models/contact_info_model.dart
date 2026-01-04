@@ -3,6 +3,7 @@ class ContactInfoModel {
   final String phone;
   final String linkedinUrl;
   final String githubUrl;
+  final String whatsappUrl;
   final String location;
 
   const ContactInfoModel({
@@ -10,6 +11,7 @@ class ContactInfoModel {
     required this.phone,
     required this.linkedinUrl,
     required this.githubUrl,
+    required this.whatsappUrl,
     required this.location,
   });
 }

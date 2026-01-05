@@ -107,10 +107,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       const SizedBox(height: 25),
 
                       // 4. Botones
-                      ProjectButtons(
-                        projectUrl: widget.project.projectUrl,
-                        githubUrl: widget.project.githubUrl,
-                      ),
+                      ProjectButtons(githubUrl: widget.project.githubUrl),
                     ],
                   ),
                 ),

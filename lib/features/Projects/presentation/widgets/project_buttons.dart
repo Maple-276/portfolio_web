@@ -4,10 +4,9 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/l10n/app_localizations.dart';
 
 class ProjectButtons extends StatelessWidget {
-  final String? projectUrl;
   final String? githubUrl;
 
-  const ProjectButtons({super.key, this.projectUrl, this.githubUrl});
+  const ProjectButtons({super.key, this.githubUrl});
 
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
@@ -20,24 +19,6 @@ class ProjectButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        if (projectUrl != null)
-          Expanded(
-            child: ElevatedButton.icon(
-              onPressed: () => _launchUrl(projectUrl!),
-              icon: const Icon(Icons.language, size: 18),
-              label: Text(
-                AppLocalizations.of(context).getString('btnLiveDemo'),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryTeal,
-                foregroundColor: Colors.black,
-                textStyle: const TextStyle(fontWeight: FontWeight.bold),
-                padding: const EdgeInsets.symmetric(vertical: 12),
-              ),
-            ),
-          ),
-        if (projectUrl != null && githubUrl != null) const SizedBox(width: 10),
-
         if (githubUrl != null)
           Expanded(
             child: OutlinedButton.icon(

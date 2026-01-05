@@ -32,7 +32,6 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
         imageUrl: 'assets/projects/portfolio.webp', // Placeholder
         tags: ['Flutter Web', 'Responsive', 'EmailJS', 'Localization'],
         githubUrl: 'https://github.com/Maple-276/portfolio_web',
-        projectUrl: 'https://alexander-p.dev',
       ),
     ];
   }

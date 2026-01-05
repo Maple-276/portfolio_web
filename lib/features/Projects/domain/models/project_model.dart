@@ -3,7 +3,6 @@ class ProjectModel {
   final String description;
   final String imageUrl;
   final List<String> tags;
-  final String? projectUrl;
   final String? githubUrl;
   final List<String>? galleryImages;
 
@@ -12,7 +11,6 @@ class ProjectModel {
     required this.description,
     required this.imageUrl,
     required this.tags,
-    this.projectUrl,
     this.githubUrl,
     this.galleryImages,
   });

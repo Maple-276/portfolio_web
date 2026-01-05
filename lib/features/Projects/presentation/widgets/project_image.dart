@@ -49,11 +49,27 @@ class ProjectImage extends StatelessWidget {
                   );
                 },
                 errorBuilder: (context, error, stackTrace) {
-                  return Center(
-                    child: Icon(
-                      Icons.code_rounded,
-                      size: 60,
-                      color: Colors.white.withValues(alpha: 0.1),
+                  // Fallback elegante si la imagen no existe
+                  return Container(
+                    color: AppColors.serviceBackground,
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.image_not_supported_outlined,
+                          size: 40,
+                          color: Colors.white.withValues(alpha: 0.2),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Image Pending',
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.2),
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 },

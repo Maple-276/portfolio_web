@@ -5,6 +5,7 @@ class ProjectModel {
   final List<String> tags;
   final String? projectUrl;
   final String? githubUrl;
+  final List<String>? galleryImages;
 
   const ProjectModel({
     required this.title,
@@ -13,5 +14,6 @@ class ProjectModel {
     required this.tags,
     this.projectUrl,
     this.githubUrl,
+    this.galleryImages,
   });
 }

@@ -27,17 +27,40 @@ A modern, responsive, and high-performance developer portfolio built with **Flut
   - **Smooth Scroll** to sections (Home, Services, Projects, Contact).
   - Active section tracking for visual feedback in NavBar.
 
+- **📩 Functional Contact Form**:
+
+  - **EmailJS Integration**: Send emails directly from the frontend (`http` package).
+  - Validation & User Feedback (Success/Error SnackBars).
+  - Rate limiting handling (button loading state).
+
+- **🌓 Dynamic UI & Animations**:
+
+  - **Scroll-Triggered Animations** (`visibility_detector`): Elements fade in as you scroll.
+  - **Interactive Buttons**: Hover effects and specialized social links (WhatsApp, LinkedIn).
+  - **Custom Favicon & Branding**: Personalized identity.
+
+## 🏆 Featured Projects
+
+The portfolio currently showcases these key projects (data loaded dynamically):
+
+1.  **No Smoke (Flutter Mobile)**:
+
+    - Quit smoking tracker app with health and savings tracking.
+    - Tech: Riverpod, Local Storage, Custom Charts.
+
+2.  **Nuclear Lake (Flutter Game)**:
+
+    - 2D Top-down shooter with procedural generation.
+    - Tech: Flame Engine, Game Loop, Collision Detection.
+
+3.  **Portfolio Web (This Project)**:
+    - Full responsive web app with EmailJS and Localization.
+
 - **🌍 Multi-language Support (i18n)**:
 
   - English (default) and Spanish support.
   - **Auto-detection** of browser language settings.
-  - Centralized JSON translation files for easy management.
-
-- **⚡ Performance Optimized**:
-  - **WebP Image Format**: Reduced asset size by ~70%.
-  - **Smart Caching**: `cacheWidth` implementation to minimize memory usage.
-  - **Custom Splash Screen**: Elegant HTML/CSS loading screen to eliminate white screen flash.
-  - **Lazy Loading**: Assets and fonts optimized for web.
+  - Centralized JSON translation files (`en.json`, `es.json`) for easy management.
 
 ## 🛠️ Tech Stack & Architecture
 
@@ -47,17 +70,16 @@ The project follows **Clean Architecture** principles to ensure maintainability 
 lib/
 ├── core/                   # Core functionality shared across features
 │   ├── constants/          # App-wide constants (Sizes, Spacing, Text)
-│   ├── errors/             # Error handling classes
 │   ├── l10n/               # Localization (AppLocalizations, JSONs)
 │   ├── theme/              # App Theme (Colors, Fonts)
 │   ├── utils/              # Utilities (ResponsiveUtils)
-│   └── widgets/            # Reusable UI Components (NavBar, Buttons, Cards)
+│   └── widgets/            # Reusable (NavBar, FadeInAnimation, Buttons)
 │
 ├── features/               # Feature-based modules
-│   ├── Contact/            # Contact Form & Social Links (Implemented)
-│   ├── Home/               # Hero & Main Landing Logic (Implemented)
-│   ├── Projects/           # Projects Gallery (Implemented)
-│   └── Service/            # Services Showcase Section (Implemented)
+│   ├── Contact/            # Contact Form (EmailJS) & Social Logic
+│   ├── Home/               # Hero & Main Landing Logic
+│   ├── Projects/           # Projects Gallery (Data & UI)
+│   └── Service/            # Services Showcase Section
 │
 └── main.dart               # Entry point & App Config
 ```
@@ -67,6 +89,8 @@ lib/
 - `flutter_localizations`: For internationalization support.
 - `google_fonts`: For "Playfair Display" and "Lato" typography.
 - `url_launcher`: For opening external links (GitHub, LinkedIn, Email).
+- `http`: For EmailJS API requests.
+- `visibility_detector`: For scroll-triggered animations.
 
 ## 🚀 Getting Started
 

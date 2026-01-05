@@ -36,18 +36,19 @@
   "projectsSubtitle": "A selection of my recent work",
   "viewMoreGithub": "View More on GitHub",
   
-  "projTitle1": "Portfolio Web",
-  "projDesc1": "My personal portfolio built with Flutter Web. Responsive design, custom animations, and multi-language support.",
-  "projTitle2": "E-Commerce App",
-  "projDesc2": "E-commerce mobile app with payment gateway, cart management, and admin panel.",
-  "projTitle3": "Task Manager API",
-  "projDesc3": "RESTful backend for task and user management, built with Node.js and MongoDB. JWT Authentication.",
-  "projTitle4": "Weather Dashboard",
-  "projDesc4": "Real-time weather dashboard consuming OpenWeatherMap API. Interactive charts and geolocation.",
+  "projTitle1": "No Smoke",
+  "projDesc1": "Quit smoking tracker application tailored to help users reduce and stop smoking. Tracks days, health benefits, and financial savings.",
+  "projTitle2": "Nuclear Lake",
+  "projDesc2": "2D Top-down shooter game featuring procedural world generation, dynamic biomes, and boss battles.",
+  "projTitle3": "Portfolio Web",
+  "projDesc3": "My personal portfolio built with Flutter Web. Responsive design, custom animations, EmailJS integration, and multi-language support.",
 
   "msgSentSuccess": "Message Sent Successfully!",
   "msgSentError": "Failed to send message. Please try again.",
   "validationName": "Please enter your name",
   "validationEmail": "Please enter a valid email",
-  "validationMessage": "Please enter a message"
+  "validationMessage": "Please enter a message",
+  "aboutProject": "About this project",
+  "btnLiveDemo": "Live Demo",
+  "btnViewCode": "View Code"
 }

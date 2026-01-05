@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_theme.dart';
 
@@ -11,26 +12,56 @@ class ProjectImage extends StatelessWidget {
     return Container(
       height: 180,
       width: double.infinity,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.black87, AppColors.serviceBackground],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
+      color: AppColors.serviceBackground,
+      child: ClipRRect(
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            // 1. Blurred Background (Zoomed)
+            ImageFiltered(
+              imageFilter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+              child: Image.asset(
+                imageUrl,
+                fit: BoxFit.cover,
+                cacheWidth: 800,
+                errorBuilder: (_, __, ___) => const SizedBox(),
+              ),
+            ),
+
+            // 2. Dim Overlay
+            Container(color: Colors.black.withValues(alpha: 0.3)),
+
+            // 3. Main Image (Contained & Centered)
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset(
+                imageUrl,
+                fit: BoxFit.contain,
+                alignment: Alignment.center,
+                cacheWidth: 800,
+                frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                  if (wasSynchronouslyLoaded) return child;
+                  return AnimatedOpacity(
+                    opacity: frame == null ? 0 : 1,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeOut,
+                    child: child,
+                  );
+                },
+                errorBuilder: (context, error, stackTrace) {
+                  return Center(
+                    child: Icon(
+                      Icons.code_rounded,
+                      size: 60,
+                      color: Colors.white.withValues(alpha: 0.1),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
-      child: Center(
-        child: Icon(
-          Icons.code_rounded,
-          size: 60,
-          color: Colors.white.withValues(alpha: 0.2),
-        ),
-      ),
-      // Placeholder: Descomentar para usar imagen real cuando esté disponible
-      // child: Image.asset(
-      //   imageUrl,
-      //   fit: BoxFit.cover,
-      //   errorBuilder: (context, error, stackTrace) => ...,
-      // ),
     );
   }
 }

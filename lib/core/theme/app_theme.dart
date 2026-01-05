@@ -16,6 +16,7 @@ class AppColors {
     0xFF17DBA7,
   ); // Cards en Service (mismo verde del navbar)
   static const Color textWhite = Colors.white;
+  static const Color background = darkBackground; // Alias for convenience
 }
 
 final ThemeData appTheme = ThemeData(

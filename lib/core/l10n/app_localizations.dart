@@ -65,6 +65,9 @@ class AppLocalizations {
   String get validationName => getString('validationName');
   String get validationEmail => getString('validationEmail');
   String get validationMessage => getString('validationMessage');
+  String get aboutProject => getString('aboutProject');
+  String get btnLiveDemo => getString('btnLiveDemo');
+  String get btnViewCode => getString('btnViewCode');
 }
 
 class _AppLocalizationsDelegate

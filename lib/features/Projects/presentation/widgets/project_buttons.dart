@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/l10n/app_localizations.dart';
 
 class ProjectButtons extends StatelessWidget {
   final String? projectUrl;
@@ -10,7 +11,7 @@ class ProjectButtons extends StatelessWidget {
 
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
-    if (!await launchUrl(uri)) {
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $url');
     }
   }
@@ -24,7 +25,9 @@ class ProjectButtons extends StatelessWidget {
             child: ElevatedButton.icon(
               onPressed: () => _launchUrl(projectUrl!),
               icon: const Icon(Icons.language, size: 18),
-              label: const Text('Live Demo'),
+              label: Text(
+                AppLocalizations.of(context).getString('btnLiveDemo'),
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryTeal,
                 foregroundColor: Colors.black,
@@ -40,7 +43,9 @@ class ProjectButtons extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () => _launchUrl(githubUrl!),
               icon: const Icon(Icons.code, size: 18),
-              label: const Text('View Code'),
+              label: Text(
+                AppLocalizations.of(context).getString('btnViewCode'),
+              ),
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: AppColors.primaryTeal),
                 foregroundColor: AppColors.primaryTeal,

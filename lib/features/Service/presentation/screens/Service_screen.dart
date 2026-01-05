@@ -22,7 +22,7 @@ class ServiceScreen extends StatelessWidget {
         child: Column(
           children: [
             FadeInAnimation(
-              delay: const Duration(milliseconds: 200),
+              delay: Duration.zero,
               child: Text(
                 AppLocalizations.of(context).getString('servicesTitle'),
                 style: GoogleFonts.playfairDisplay(
@@ -49,7 +49,7 @@ class ServiceScreen extends StatelessWidget {
               alignment: WrapAlignment.center,
               children: [
                 FadeInAnimation(
-                  delay: const Duration(milliseconds: 400),
+                  delay: const Duration(milliseconds: 100),
                   child: ServiceCard(
                     icon: Icons.code,
                     title: AppLocalizations.of(
@@ -61,7 +61,7 @@ class ServiceScreen extends StatelessWidget {
                   ),
                 ),
                 FadeInAnimation(
-                  delay: const Duration(milliseconds: 600),
+                  delay: const Duration(milliseconds: 200),
                   child: ServiceCard(
                     icon: Icons.brush,
                     title: AppLocalizations.of(
@@ -73,7 +73,7 @@ class ServiceScreen extends StatelessWidget {
                   ),
                 ),
                 FadeInAnimation(
-                  delay: const Duration(milliseconds: 800),
+                  delay: const Duration(milliseconds: 300),
                   child: ServiceCard(
                     icon: Icons.settings,
                     title: AppLocalizations.of(

@@ -9,88 +9,86 @@ A modern, responsive, and high-performance developer portfolio built with **Flut
 
 - **🎨 Modern Aesthetic UI**:
 
-  - Glassmorphism effects in Navigation Bar & Cards.
+  - **Glassmorphism** effects in Navigation Bar & Cards.
+  - **Blurred Backgrounds** for Project Cards (Spotify-style aesthetics).
   - Custom animations (`FadeIn`, hover effects, ambient glows).
-  - Consistent design system (Typography, Colors, Spacing).
-  - **Dark Mode** integrated theme.
+  - **Dark Mode** integrated theme with `AppColors`.
 
 - **📱 Fully Responsive Design**:
 
   - Adapts seamlessly to Mobile, Tablet, and Desktop screens.
-  - **Mobile Navigation**: Custom Drawer for smaller screens.
-  - Custom `ResponsiveUtils` for scaling fonts, padding, and layout sizing.
-  - Dynamic layouts using `Wrap`, `Flexible`, and conditional rendering.
+  - **Mobile Navigation**: Custom Drawer and reactive layouts.
+  - `ResponsiveUtils` for scaling fonts, padding, and layout sizing.
 
 - **🧭 Smooth Navigation**:
 
-  - Single-page application architecture.
+  - Single-page application (SPA) architecture.
   - **Smooth Scroll** to sections (Home, Services, Projects, Contact).
   - Active section tracking for visual feedback in NavBar.
 
-- **📩 Functional Contact Form**:
+- **📩 Functional Contact Form (EmailJS)**:
 
-  - **EmailJS Integration**: Send emails directly from the frontend (`http` package).
-  - Validation & User Feedback (Success/Error SnackBars).
-  - Rate limiting handling (button loading state).
+  - Send emails directly from the frontend using **EmailJS API**.
+  - Rate limiting and loading states.
+  - User Feedback: Success/Error SnackBars and form validation.
 
 - **🌓 Dynamic UI & Animations**:
 
-  - **Scroll-Triggered Animations** (`visibility_detector`): Elements fade in as you scroll.
-  - **Interactive Buttons**: Hover effects and specialized social links (WhatsApp, LinkedIn).
-  - **Custom Favicon & Branding**: Personalized identity.
+  - **Scroll-Triggered Animations** (`visibility_detector`): Elements fade in elegantly as you scroll.
+  - **Interactive Hover Effects**: Buttons, cards, and links respond to cursor movement.
+  - **Project Gallery**: Custom modal dialog with **Image Carousel** to showcase project screenshots.
 
-## 🏆 Featured Projects
+- **🌍 Multi-language Support (i18n)**:
+  - **English** and **Spanish** support.
+  - **Auto-detection** of browser language settings.
+  - Instant language switching via the UI without reloading.
 
-The portfolio currently showcases these key projects (data loaded dynamically):
+## 🏆 Project Showcase
+
+The portfolio dynamically loads projects using a repository pattern. Featured projects include:
 
 1.  **No Smoke (Flutter Mobile)**:
 
     - Quit smoking tracker app with health and savings tracking.
-    - Tech: Riverpod, Local Storage, Custom Charts.
+    - **Tech**: Riverpod, Local Storage, Custom Charts.
+    - [Live Demo](https://alexander-p.dev) | [View Code](https://github.com/Maple-276/no_smoke)
 
 2.  **Nuclear Lake (Flutter Game)**:
 
     - 2D Top-down shooter with procedural generation.
-    - Tech: Flame Engine, Game Loop, Collision Detection.
+    - **Tech**: Flame Engine, Game Loop, Collision Detection.
+    - [Live Demo](https://alexander-p.dev) | [View Code](https://github.com/Maple-276/nuclear_lake)
 
-3.  **Portfolio Web (This Project)**:
-    - Full responsive web app with EmailJS and Localization.
+3.  **Portfolio Web**:
+    - This responsive web app.
+    - **Tech**: Flutter Web, EmailJS, Localization.
 
-- **🌍 Multi-language Support (i18n)**:
+## 🛠️ Architecture & Tech Stack
 
-  - English (default) and Spanish support.
-  - **Auto-detection** of browser language settings.
-  - Centralized JSON translation files (`en.json`, `es.json`) for easy management.
-
-## 🛠️ Tech Stack & Architecture
-
-The project follows **Clean Architecture** principles to ensure maintainability and scalability. code structure is strictly typed and verified with zero analyzer issues.
+The project follows **Clean Architecture** principles to ensure maintainability and scalability.
 
 ```
 lib/
-├── core/                   # Core functionality shared across features
-│   ├── constants/          # App-wide constants (Sizes, Spacing, Text)
-│   ├── l10n/               # Localization (AppLocalizations, JSONs)
-│   ├── theme/              # App Theme (Colors, Fonts)
-│   ├── utils/              # Utilities (ResponsiveUtils)
-│   └── widgets/            # Reusable (NavBar, FadeInAnimation, Buttons)
-│
+├── core/                   # Shared functionality
+│   ├── constants/          # Centralized AppConstants
+│   ├── l10n/               # Localization (AppLocalizations, en.json, es.json)
+│   ├── theme/              # AppTheme (AppColors, Fonts)
+│   └── widgets/            # Reusable Widgets (NavBar, FadeInAnimation, Buttons)
 ├── features/               # Feature-based modules
-│   ├── Contact/            # Contact Form (EmailJS) & Social Logic
-│   ├── Home/               # Hero & Main Landing Logic
-│   ├── Projects/           # Projects Gallery (Data & UI)
-│   └── Service/            # Services Showcase Section
-│
-└── main.dart               # Entry point & App Config
+│   ├── Contact/            # Contact Form & Logic (EmailJS)
+│   ├── Home/               # Landing Section
+│   ├── Projects/           # Repository, Models & Gallery UI
+│   └── Service/            # Services Section
+└── main.dart               # Entry Point & Config
 ```
 
 ### 📦 Key Dependencies
 
-- `flutter_localizations`: For internationalization support.
-- `google_fonts`: For "Playfair Display" and "Lato" typography.
-- `url_launcher`: For opening external links (GitHub, LinkedIn, Email).
-- `http`: For EmailJS API requests.
-- `visibility_detector`: For scroll-triggered animations.
+- `flutter_localizations`: Internationalization.
+- `google_fonts`: "Playfair Display" & "Lato".
+- `url_launcher`: Opening external links.
+- `http`: API requests (EmailJS).
+- `visibility_detector`: Scroll animations.
 
 ## 🚀 Getting Started
 
@@ -104,7 +102,7 @@ lib/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/portfolio_web.git
+   git clone https://github.com/Maple-276/portfolio_web.git
    cd portfolio_web
    ```
 
@@ -123,24 +121,13 @@ lib/
 4. **Build for Production**
    ```bash
    flutter build web --release --web-renderer canvaskit
-   # or for faster initial load (but heavier canvas operations might vary)
-   flutter build web --release --web-renderer html
    ```
-
-## 🌐 Localization (Adding a new language)
-
-1. Create a new JSON file in `lib/core/l10n/` (e.g., `fr.json`).
-2. Add the language code to `app_localizations.dart` in the `isSupported` method.
-3. Add the `Locale` to `supportedLocales` in `main.dart`.
-4. Register the new translation file in `pubspec.yaml` assets if needed.
 
 ## 🎨 Design Assets
 
-- **Fonts**: Playfair Display (Headers), Lato (Body).
-- **Colors**:
-  - Primary Teal: `#17DBA7`
-  - Dark Background: `#040404`
-  - Service Green: `#10342A`
+- **Primary Color**: `#17DBA7` (Teal)
+- **Background**: `#040404` (Dark Tech)
+- **Fonts**: Playfair Display (Headers) / Lato (Body)
 
 ---
 

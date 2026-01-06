@@ -6,7 +6,7 @@ import '../../../../core/constants/app_constants.dart';
 import '../../../../core/widgets/custom_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/utils/responsive_utils.dart';
-import '../../../Contact/data/repositories/contact_repository_impl.dart';
+import 'package:portfolio_web/features/contact/data/repositories/contact_repository_impl.dart';
 import '../../../../core/l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {

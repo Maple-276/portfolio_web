@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/nav_bar.dart';
 import '../../../../core/theme/app_theme.dart';
-import '../../../Service/presentation/screens/service_screen.dart';
-import '../../../../features/Projects/presentation/screens/projects_screen.dart';
-import '../../../Contact/presentation/screens/contact_screen.dart';
+import '../../../service/presentation/screens/service_screen.dart';
+import '../../../../features/projects/presentation/screens/projects_screen.dart';
+import '../../../contact/presentation/screens/contact_screen.dart';
 import '../widgets/ambient_background.dart';
 import '../widgets/mobile_drawer.dart';
 import 'home_screen.dart';

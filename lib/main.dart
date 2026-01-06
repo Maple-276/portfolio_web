@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/theme/app_theme.dart';
 import 'core/l10n/app_localizations.dart';
-import 'features/Home/presentation/screens/portfolio_page.dart';
+import 'features/home/presentation/screens/portfolio_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theme/app_theme.dart';
+import 'package:portfolio_web/core/theme/app_theme.dart';
 
 class ProjectTags extends StatelessWidget {
   final List<String> tags;

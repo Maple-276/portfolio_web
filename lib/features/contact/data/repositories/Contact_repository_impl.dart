@@ -1,7 +1,7 @@
 ﻿import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../../domain/models/contact_info_model.dart';
-import '../../domain/repositories/contact_repository.dart';
+import 'package:portfolio_web/features/contact/domain/models/contact_info_model.dart';
+import 'package:portfolio_web/features/contact/domain/repositories/contact_repository.dart';
 
 class ContactRepositoryImpl implements ContactRepository {
   @override

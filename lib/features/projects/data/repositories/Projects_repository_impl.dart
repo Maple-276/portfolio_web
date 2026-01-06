@@ -1,5 +1,5 @@
-﻿import '../../domain/models/project_model.dart';
-import '../../domain/repositories/projects_repository.dart';
+﻿import 'package:portfolio_web/features/projects/domain/models/project_model.dart';
+import 'package:portfolio_web/features/projects/domain/repositories/projects_repository.dart';
 
 class ProjectsRepositoryImpl implements ProjectsRepository {
   @override

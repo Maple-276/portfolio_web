@@ -1,8 +1,8 @@
 ﻿import 'package:flutter/material.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/widgets/section_container.dart';
-import '../../data/repositories/projects_repository_impl.dart';
-import '../widgets/project_card.dart';
+import 'package:portfolio_web/features/projects/data/repositories/projects_repository_impl.dart';
+import 'package:portfolio_web/features/projects/presentation/widgets/project_card.dart';
 import '../../../../core/l10n/app_localizations.dart';
 import '../../../../core/widgets/fade_in_animation.dart';
 import 'package:url_launcher/url_launcher.dart';

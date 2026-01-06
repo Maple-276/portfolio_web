@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import '../../../../core/widgets/nav_bar.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../service/presentation/screens/service_screen.dart';
-import '../../../../features/projects/presentation/screens/projects_screen.dart';
+import '../../../projects/presentation/screens/projects_screen.dart';
 import '../../../contact/presentation/screens/contact_screen.dart';
-import '../widgets/ambient_background.dart';
-import '../widgets/mobile_drawer.dart';
-import 'home_screen.dart';
+import 'package:portfolio_web/features/home/presentation/widgets/ambient_background.dart';
+import 'package:portfolio_web/features/home/presentation/widgets/mobile_drawer.dart';
+import 'package:portfolio_web/features/home/presentation/screens/home_screen.dart';
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({super.key});

@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../../../../core/theme/app_theme.dart';
+import 'package:portfolio_web/core/theme/app_theme.dart';
 
 class ProjectImage extends StatelessWidget {
   final String imageUrl;
@@ -24,7 +24,7 @@ class ProjectImage extends StatelessWidget {
                 imageUrl,
                 fit: BoxFit.cover,
                 cacheWidth: 800,
-                errorBuilder: (_, __, ___) => const SizedBox(),
+                errorBuilder: (context, error, stackTrace) => const SizedBox(),
               ),
             ),
 

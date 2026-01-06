@@ -5,10 +5,10 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/l10n/app_localizations.dart';
 import '../../../../core/widgets/section_container.dart';
 import '../../../../core/widgets/fade_in_animation.dart';
-import '../../data/repositories/contact_repository_impl.dart';
-import '../widgets/contact_info_item.dart';
-import '../widgets/social_button.dart';
-import '../widgets/contact_form.dart';
+import 'package:portfolio_web/features/contact/data/repositories/contact_repository_impl.dart';
+import 'package:portfolio_web/features/contact/presentation/widgets/contact_info_item.dart';
+import 'package:portfolio_web/features/contact/presentation/widgets/social_button.dart';
+import 'package:portfolio_web/features/contact/presentation/widgets/contact_form.dart';
 
 class ContactScreen extends StatelessWidget {
   const ContactScreen({super.key});

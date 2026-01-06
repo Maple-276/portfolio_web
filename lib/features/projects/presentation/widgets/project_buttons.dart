@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../../../core/theme/app_theme.dart';
-import '../../../../core/l10n/app_localizations.dart';
+import 'package:portfolio_web/core/theme/app_theme.dart';
+import 'package:portfolio_web/core/l10n/app_localizations.dart';
 
 class ProjectButtons extends StatelessWidget {
   final String? githubUrl;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_theme.dart';
-import '../../domain/models/project_model.dart';
-import 'project_buttons.dart';
-import 'project_image.dart';
-import 'project_tags.dart';
-import 'project_detail_dialog.dart';
+import 'package:portfolio_web/features/projects/domain/models/project_model.dart';
+import 'package:portfolio_web/features/projects/presentation/widgets/project_buttons.dart';
+import 'package:portfolio_web/features/projects/presentation/widgets/project_image.dart';
+import 'package:portfolio_web/features/projects/presentation/widgets/project_tags.dart';
+import 'package:portfolio_web/features/projects/presentation/widgets/project_detail_dialog.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
 

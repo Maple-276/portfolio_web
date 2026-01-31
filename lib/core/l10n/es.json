@@ -4,13 +4,11 @@
   "navServices": "Servicios",
   "navProjects": "Proyectos",
   "navContact": "Contacto",
-  
   "heroGreeting": "Hola, soy desarrollador",
   "heroTitle": "Móvil | Web",
   "heroSubtitle": "Desarrollador especialista en Flutter",
   "btnViewProfile": "Ver Perfil",
   "btnKnowMore": "Saber más",
-  
   "servicesTitle": "Servicios",
   "serviceDevelopmentTitle": "Desarrollo",
   "serviceDevelopmentDesc": "Desarrollo de aplicaciones desde cero hasta el despliegue",
@@ -18,9 +16,7 @@
   "serviceUIUXDesc": "Diseño de tu aplicación según tu solicitud minimalista o como la desees",
   "serviceMaintenanceTitle": "Mantenimiento",
   "serviceMaintenanceDesc": "Actualizaciones continuas, corrección de errores y monitoreo de rendimiento para mantener tu app funcionando sin problemas",
-  
   "loadingPortfolio": "Cargando portafolio...",
-  
   "contactTitle": "Contáctame",
   "contactSubtitle": "¿Tienes un proyecto en mente? Hablemos.",
   "contactEmail": "Correo",
@@ -31,20 +27,21 @@
   "labelName": "Nombre",
   "labelEmail": "Correo",
   "labelMessage": "Mensaje",
-
   "projectsTitle": "Proyectos Destacados",
   "projectsSubtitle": "Una selección de mi trabajo reciente",
   "viewMoreGithub": "Ver Más en GitHub",
-  
   "projTitle1": "No Smoke",
   "projDesc1": "Aplicación para dejar de fumar. Rastrea días sin fumar, beneficios de salud y ahorros financieros.",
   "projTitle2": "Nuclear Lake",
   "projDesc2": "Juego de disparos 2D top-down con generación procedimental de mundos, biomas dinámicos y batallas con jefes.",
   "projTitle3": "Portfolio Web",
   "projDesc3": "Mi portafolio personal construido con Flutter Web. Diseño responsivo, animaciones personalizadas, integración con EmailJS y soporte multi-idioma.",
-  "projTitle4": "Dashboard del Clima",
-  "projDesc4": "Dashboard de clima en tiempo real consumiendo OpenWeatherMap API. Gráficos interactivos y geolocalización.",
-
+  "projTitle4": "Cita Espa",
+  "projDesc4": "Una aplicación que gestiona la cita para todo tipo de salones de belleza.",
+  "projTitle5": "Rest Guest",
+  "projDesc5": "Una aplicación de gestión de restaurantes o puestos de comida rápida.",
+  "projTitle6": "Factu AI",
+  "projDesc6": "Una aplicación que integra inteligencia artificial para generar facturas, guardar contactos, almacenar datos en DB y compartir el entorno de facturación.",
   "msgSentSuccess": "¡Mensaje Enviado Exitosamente!",
   "msgSentError": "Error al enviar mensaje. Intenta de nuevo.",
   "validationName": "Por favor ingresa tu nombre",

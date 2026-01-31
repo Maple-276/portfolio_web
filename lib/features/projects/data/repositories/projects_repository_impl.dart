@@ -33,6 +33,24 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
         tags: ['Flutter Web', 'Responsive', 'EmailJS', 'Localization'],
         githubUrl: 'https://github.com/Maple-276/portfolio_web',
       ),
+      const ProjectModel(
+        title: 'projTitle4', // Cita Espa
+        description: 'projDesc4',
+        imageUrl: 'assets/projects/portfolio.webp', // Placeholder
+        tags: ['Flutter', 'Management', 'Booking', 'B2B'],
+      ),
+      const ProjectModel(
+        title: 'projTitle5', // Rest Guest
+        description: 'projDesc5',
+        imageUrl: 'assets/projects/portfolio.webp', // Placeholder
+        tags: ['Flutter', 'Restaurant', 'Orders', 'Real-time'],
+      ),
+      const ProjectModel(
+        title: 'projTitle6', // Factu AI
+        description: 'projDesc6',
+        imageUrl: 'assets/projects/portfolio.webp', // Placeholder
+        tags: ['Flutter', 'AI', 'Invoicing', 'Database'],
+      ),
     ];
   }
 }

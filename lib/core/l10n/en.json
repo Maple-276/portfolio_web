@@ -4,13 +4,11 @@
   "navServices": "Services",
   "navProjects": "Projects",
   "navContact": "Contact",
-
   "heroGreeting": "Hi, I am developer",
   "heroTitle": "Mobile | Web",
   "heroSubtitle": "Specialist flutter developer",
   "btnViewProfile": "View Profile",
   "btnKnowMore": "Know more",
-
   "servicesTitle": "Services",
   "serviceDevelopmentTitle": "Development",
   "serviceDevelopmentDesc": "Application development from scratch to deployment",
@@ -18,9 +16,7 @@
   "serviceUIUXDesc": "Design your application to your minimalist request or however you want it",
   "serviceMaintenanceTitle": "Maintenance",
   "serviceMaintenanceDesc": "Continuous updates, bug fixing, and performance monitoring to keep your app running smoothly",
-
   "loadingPortfolio": "Loading portfolio...",
-  
   "contactTitle": "Get In Touch",
   "contactSubtitle": "Have a project in mind? Let's talk.",
   "contactEmail": "Email",
@@ -31,18 +27,21 @@
   "labelName": "Name",
   "labelEmail": "Email",
   "labelMessage": "Message",
-
   "projectsTitle": "Featured Projects",
   "projectsSubtitle": "A selection of my recent work",
   "viewMoreGithub": "View More on GitHub",
-  
   "projTitle1": "No Smoke",
   "projDesc1": "Quit smoking tracker application tailored to help users reduce and stop smoking. Tracks days, health benefits, and financial savings.",
   "projTitle2": "Nuclear Lake",
   "projDesc2": "2D Top-down shooter game featuring procedural world generation, dynamic biomes, and boss battles.",
   "projTitle3": "Portfolio Web",
   "projDesc3": "My personal portfolio built with Flutter Web. Responsive design, custom animations, EmailJS integration, and multi-language support.",
-
+  "projTitle4": "Cita Espa",
+  "projDesc4": "An application that manages appointments for all types of beauty salons.",
+  "projTitle5": "Rest Guest",
+  "projDesc5": "A management application for restaurants or fast food stalls.",
+  "projTitle6": "Factu AI",
+  "projDesc6": "An application that integrates AI to generate invoices, save contacts, store data in a DB, and share the billing environment with others.",
   "msgSentSuccess": "Message Sent Successfully!",
   "msgSentError": "Failed to send message. Please try again.",
   "validationName": "Please enter your name",
